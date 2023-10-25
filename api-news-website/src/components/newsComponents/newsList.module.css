@@ -1,0 +1,7 @@
+.listItem {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+ flex-wrap: wrap;
+ flex-direction: row;
+ column-gap: 2.5em;
+}
