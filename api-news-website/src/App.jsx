@@ -1,19 +1,17 @@
-import React from 'react';
-import Card from './components/cards/Card';
-import styles from './components/cards/card.module.css';
-import NewsFetcher from './components/newsComponents/NewsDataFetcher';
+import styles from './App.css';
+import NewsDataFetcher from './components/newsComponents/NewsDataFetcher';
+import Navbar from './components/UI/Navbar';
 
 function App() {
 
 
   return (
-      <React.Fragment>
-        <Card className={styles.card}>
-        <NewsFetcher/>
-        </Card>
-      </React.Fragment>
-
-
+      <>
+        <div className={styles.app}>
+          <Navbar />
+          <NewsDataFetcher/>
+        </div>
+      </>
   );
 }
 
