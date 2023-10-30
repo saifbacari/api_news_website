@@ -1,7 +1,30 @@
-.newsItem {
-    list-style: none;
+.imgArticle {
+    object-fit: cover;
+    height: 200px;
+    width:100%;
+
 }
 
-h1{
+.nameMedia{
     color:red;
+}
+
+.titleArticle{
+font-weight: 2px;
+font-size: 11px;
+color:black;
+}
+
+.descArticle {
+font-size: 12px;
+color: green;
+}
+
+.url{
+font-size: 10px;
+}
+
+.datePublishing{
+font-size: 18px;
+color:  yellow;
 }
