@@ -2,10 +2,13 @@ import { useState } from "react";
 import NewsList from "./NewsList";
 import Searchbar from "../searchbar/searchbar";
 import styles from "./newsDataFetcher.module.css";
+import config from "../../../appConfig";
 
 const NewsDataFetcher = () => {
   const [news, setNews] = useState([]);
   const [search, setSearch] = useState("");
+  const apiKey = config.API_KEY;
+
 
   //mettre cette partie sous custome Hook
   const searchNewsHandler = (e) => {
@@ -16,7 +19,7 @@ const NewsDataFetcher = () => {
   //integrer sous custom Hook
   async function fetchNewsHandler() {
     const response = await fetch(
-      `https://newsapi.org/v2/everything?q=${search}&apiKey=9790d6f530c648bb9ab9194543ed050f`
+      `https://newsapi.org/v2/everything?q=${search}&apiKey=${apiKey}`
     );         
     const data = await response.json();
     const dataGathered = data.articles.map((newsData) => {
