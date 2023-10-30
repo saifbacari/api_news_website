@@ -1,11 +1,12 @@
 #root {
   width: 100%;
+  .app{
+    display: flex;
+    position: relative;
+    padding-inline: 5%;
+  }
 }
 
 /*Personal configuration */
 
-.app{
-  display: flex;
-  position: relative;
-  padding-inline: 5%;
-}
+

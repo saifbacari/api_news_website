@@ -4,14 +4,16 @@ import NewsItem from './NewsItem';
 
 const NewsList = (props) => {
     return (
-                    <div>
+                    <div className={styles.resultsList}>
                         <ul className={styles.listItem}>
                             {props.news.map((item) => (
                                 <NewsItem
                                 key={item.id}
-                                id={item.id}
+                                source={item.source}
                                 title={item.title}
                                 description={item.description}
+                                url={item.url}
+                                publishedAt={item.publishedAt}
                                 />
                             ))}
                         </ul>
