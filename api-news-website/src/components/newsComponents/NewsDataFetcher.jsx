@@ -16,14 +16,17 @@ const NewsDataFetcher = () => {
   //integrer sous custom Hook
   async function fetchNewsHandler() {
     const response = await fetch(
-      `https://newsdata.io/api/1/news?apikey=pub_31698a70fdcc0fd3a35a70d96a05fc6e34a3b&q=${search}&country=fr`
-    );
+      `https://newsapi.org/v2/everything?q=${search}&apiKey=9790d6f530c648bb9ab9194543ed050f`
+    );         
     const data = await response.json();
-    const dataGathered = data.results.map((newsData) => {
+    const dataGathered = data.articles.map((newsData) => {
       return {
         id: Math.random(),
+        source: newsData.source.name,
         title: newsData.title,
         description: newsData.description,
+        url: newsData.url,
+        publishedAt: newsData.publishedAt,
       };
     });
     setNews(dataGathered);
