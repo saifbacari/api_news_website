@@ -1,0 +1,9 @@
+.cardNewsItem{
+   position: relative;
+   display:flex;
+   flex-direction: column;
+   background-color: pink;
+   height: 600px;
+   list-style: none;
+   margin-bottom: 75px;
+}

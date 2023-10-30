@@ -23,6 +23,7 @@ const NewsDataFetcher = () => {
       return {
         id: Math.random(),
         source: newsData.source.name,
+        urlToImage: newsData.urlToImage,
         title: newsData.title,
         description: newsData.description,
         url: newsData.url,

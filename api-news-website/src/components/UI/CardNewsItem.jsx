@@ -1,10 +1,9 @@
-import styles from './CardNewsItem.module.css'
+import './CardNewsItem.css'
 
-const CardNewsItem = () => {
-
+const CardNewsItem = (props) => {
+        const classes = 'cardNewsItem ' + props.className;
     return (
-        <div className={styles.CardNewsItem}></div>
-
+        <div className={classes}>{props.children}</div>
     )
 }
 
