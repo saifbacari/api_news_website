@@ -1,13 +1,11 @@
-.resultsList {
-    padding-bottom:5px;
-
-}
-
 .listItem {
  display: grid;
  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+ grid-gap: 21px;
  flex-wrap: wrap;
  flex-direction: row;
  column-gap: 2.5em;
  padding-inline: 5%;
+ margin-top: 0px;
+ padding-top: 38px;
 }
