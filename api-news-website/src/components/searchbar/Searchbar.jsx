@@ -5,7 +5,7 @@ const Searchbar = ({onSearch, onFetch}) => {
 
     return(
         <div className={styles.searchbar}>
-          <input className={styles.inputSearchbar}onChange={onSearch} />
+          <input className={styles.inputSearchbar} onChange={onSearch} />
           <button onClick={onFetch}>Fetch Data</button>
         </div>
     )
