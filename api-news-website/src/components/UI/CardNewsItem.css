@@ -2,8 +2,7 @@
    position: relative;
    display:flex;
    flex-direction: column;
-   background-color: pink;
-   height: 600px;
+   background-color: grey;
    list-style: none;
-   margin-bottom: 75px;
+   bottom: 26px;
 }

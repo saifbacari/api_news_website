@@ -4,7 +4,7 @@ import NewsItem from './NewsItem';
 
 const NewsList = (props) => {
     return (
-                    <div className={styles.resultsList}>
+                 
                         <ul className={styles.listItem}>
                             {props.news.map((item) => (
                                 <NewsItem
@@ -19,7 +19,7 @@ const NewsList = (props) => {
                             ))}
                         </ul>
 
-                    </div>
+               
 
             
 
