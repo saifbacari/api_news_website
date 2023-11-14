@@ -1,7 +1,27 @@
 .imgArticle {
     object-fit: cover;
     width:100%;
+    height: 236px;
+}
 
+.logoSource {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+.nameMedia {
+    border:0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+
+.logoNews {
+    width: 7%;
+    height: 10%;
+    margin-right: 11px;
 }
 
 .textNewsItem {

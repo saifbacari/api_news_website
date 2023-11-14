@@ -46,13 +46,13 @@ const NewsDataFetcher = () => {
 
   useEffect(() => {
     console.log(categorie)
-      }, [categorie]);
+      }, [categorie, search]);
     
 
 
 
   const fetchNewsHandler = async function() {
-    if (isSearched === false ) {
+    if (isSearched === false && categorie ) {
       const response = await fetch(
         `https://newsapi.org/v2/top-headlines?country=fr&category=${categorie}&apiKey=${apiKey}`
       );
@@ -68,7 +68,10 @@ const NewsDataFetcher = () => {
         };
       });
       setNews(dataGathered);
-    } else {
+    }
+    
+    else {
+
       const response = await fetch(
         `https://newsapi.org/v2/everything?q=${search}&apiKey=${apiKey}`
 
@@ -97,7 +100,7 @@ const NewsDataFetcher = () => {
   return (
     <>
       <div className={styles.searchComponent}>
-        <ListTopics onCategoryChange={handleCategorieChange} onFetch={handleCategorieChange} />
+         <ListTopics onCategoryChange={handleCategorieChange} onFetch={handleCategorieChange} />
         <Searchbar
           onSearch={searchNewsHandler}
           onFetch={fetchNewsHandler}
@@ -105,7 +108,7 @@ const NewsDataFetcher = () => {
           value={categorie}
         />
       </div>
-      <NewsList news={news} />
+       <NewsList news={news} />
     </>
   );
 };
