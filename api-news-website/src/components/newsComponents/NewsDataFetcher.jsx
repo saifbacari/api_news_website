@@ -4,6 +4,7 @@ import Searchbar from "../searchbar/searchbar";
 import styles from "./newsDataFetcher.module.css";
 import config from "../../../appConfig";
 import ListTopics from "../UI/ListTopics";
+import moment from "moment";
 
 const NewsDataFetcher = () => {
   const [news, setNews] = useState([]);
@@ -25,13 +26,15 @@ const NewsDataFetcher = () => {
       );
       const data = await response.json();
       const dataGathered = data.articles.map((newsData) => {
+        //faire un custom hook pour la formatted
+        const formmattedDate = moment(newsData.publishedAt).startOf('day').fromNow();
         return {
           id: Math.random(),
           source: newsData.source.name,
           urlToImage: newsData.urlToImage,
           title: newsData.title,
           url: newsData.url,
-          publishedAt: newsData.publishedAt,
+          publishedAt: formmattedDate,
         };
       });
       setNews(dataGathered);
@@ -49,7 +52,7 @@ const NewsDataFetcher = () => {
       }, [categorie, search]);
     
 
-
+//
 
   const fetchNewsHandler = async function() {
     if (isSearched === false && categorie ) {
@@ -78,6 +81,7 @@ const NewsDataFetcher = () => {
       );
       const data = await response.json();
       const dataCategorieGathered = data.articles.map((newsData) => {
+        const convertedDate = moment(newsData.publishedAt).startOf('day').fromNow();
         return {
           id: Math.random(),
           source: newsData.source.name,
@@ -85,7 +89,7 @@ const NewsDataFetcher = () => {
           title: newsData.title,
           description: newsData.description,
           url: newsData.url,
-          publishedAt: newsData.publishedAt,
+          publishedAt: convertedDate,
         };
       });
       setNews(dataCategorieGathered);
